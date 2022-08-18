@@ -23,6 +23,7 @@ dependencies {
     implementation "io.grpc:grpc-protobuf:${grpcVersion}"
     implementation "io.grpc:grpc-stub:${grpcVersion}"
     compileOnly "org.apache.tomcat:annotations-api:6.0.53"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
 
     // examples/advanced need this for JsonFormat
     implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
@@ -42,6 +43,7 @@ dependencies {
 
 tasks.withType(JavaCompile) {
     options.compilerArgs << '-Xlint' << '-Werror'
+    options.release = 8
 }
 
 test {
